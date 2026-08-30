@@ -8,7 +8,7 @@ This repository serves as a centralized portfolio and index for my data science,
 
 | # | Project Title | Primary Focus | Tech Stack | Kaggle Link |
 |---|---------------|---------------|------------|-------------|
-| 01 | [Lichess Chess Matches: SQL & EDA](#01---lichess-chess-matches-sql--exploratory-data-analysis) | Relational Database Analysis & Game Theory | SQLite, SQL, Python, Pandas | [View Notebook](https://www.kaggle.com/) |
+| 01 | [Lichess Chess Matches: SQL & EDA](#01---lichess-chess-matches-sql--exploratory-data-analysis) | Relational Database Analysis & Game Theory | SQLite, SQL, Python, Pandas | [View Notebook]([https://www.kaggle.com/](https://www.kaggle.com/code/giorgiocolomb0/lichessgamesanalysis)) |
 
 ---
 
