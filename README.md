@@ -1,2 +1,2 @@
 # Data-Analysis-Portfolio
-Portfolio con vari progetti di Analisi dei dati. Al momento: Tableau, Python, Pandas, SQL
+Portfolio consisting of various Data Analysis projects. For the moment: Tableau, Python, Pandas and SQL.
