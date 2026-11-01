@@ -33,9 +33,12 @@ Public Kaggle dataset *Clash Royale matchups, June 2026* (`jackmangione/clash-ro
 Reading these results: level carries slightly more predictive signal than card choice alone (AUC 0.665 vs 0.650), and the two together reach 0.711. Controlling for level changes the card ranking only modestly (Spearman 0.943). The lower 0.749 against raw win rates also reflects opponent mix and regularisation, so it should not be read as level bias alone.
 
 ## Limitations and open issues
-- **The deck-level results are not credible yet.** The decks ranked as "robust" show win rates of 85-92% over hundreds of games and hundreds of distinct players, and several of the most-played decks show 10-21%. Matchmaking keeps win rates near 50%, so this points to how the dataset was collected (for example non-human opponents or a biased sample of matches) rather than to deck strength. The deck ranking must not be read as strategy advice until this is investigated.
+- **The deck-level results are not credible yet, and the causes have been found.** See [`claude_correction_data_quality_audit.ipynb`](claude_correction_data_quality_audit.ipynb), a data-quality review written with Claude Code (the original notebook is left unchanged). On one file of the dataset it shows that (a) beginner matches (3.9% of matches, average card level about 4, no evolutions or heroes) produce the 85-93% win-rate decks, and (b) a group of 6,119 very active accounts with a 20% win rate distorts the most popular decks. The match-weighted mean deck win rate is still 33% after removing beginners (it should be about 50%), so the deck ranking must not be read as strategy advice until the second issue is fixed as well.
 - **The level coefficient comes from a level-only model**, so it also absorbs card effects. The combined model's coefficient would be cleaner.
 - **Wilson intervals assume independent games**, but the same players repeat decks, player skill is unobserved, and 2,277 decks are ranked at once (multiple comparisons). Results are associations, not causal effects.
+
+## Data-quality review
+The notebook [`claude_correction_data_quality_audit.ipynb`](claude_correction_data_quality_audit.ipynb) documents the issues above with reproducible code and outputs.
 
 ## Reproduce
 Open the notebook in Colab (badge above). The dataset is downloaded automatically with `kagglehub`.
