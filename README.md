@@ -9,8 +9,8 @@ Applied data analysis projects in **Python, SQL and Tableau**, built on open and
 
 | Project | Question | Methods | Scale |
 |---|---|---|---|
-| [**Clash Royale 2026: meta analysis with a discrete-choice model**](clash-royale-2026-meta-econometrics/) | Which cards and decks are *actually* strong once card levels and single-player dominance are controlled for? | Sparse logistic regression, Wilson confidence intervals, 64-bit deck encoding, Spearman rank analysis | ~10M matches |
-| [**Clash Royale 2021: upper-ladder deck analysis**](clash-royale-2021-battles/) | Which decks win most across trophy brackets? | Data cleaning, descriptive statistics, win-rate ranking by bracket | ~719k battles |
+| [**Clash Royale 2026: meta analysis with a discrete-choice model**](clash-royale-2026-meta-econometrics/) | How much of a win is explained by card choice versus card levels? (deck-level results have known data issues, see the project README) | Sparse logistic regression, Wilson confidence intervals, 64-bit deck encoding, Spearman rank analysis | ~10M matches |
+| [**Clash Royale 2021: upper-ladder deck analysis**](clash-royale-2021-battles/) | Which decks accumulate the most wins across trophy brackets? (descriptive: popularity and wins) | Data cleaning, descriptive statistics, win-rate ranking by bracket | ~719k battles |
 | [**Lichess chess games: SQL & EDA**](lichess-chess-sql/) | How large is the first-mover advantage, and how do ratings and openings shape outcomes? | SQLite, CTEs, conditional aggregation, pandas, seaborn | ~20k games |
 
 Related work, kept in its own repositories:

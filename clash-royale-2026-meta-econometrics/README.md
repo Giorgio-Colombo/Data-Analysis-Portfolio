@@ -24,13 +24,18 @@ Public Kaggle dataset *Clash Royale matchups, June 2026* (`jackmangione/clash-ro
 | ROC-AUC, cards only | 0.650 |
 | ROC-AUC, levels only | 0.665 |
 | ROC-AUC, cards + levels | **0.711** |
-| Level effect (logit coefficient per +1 average level) | 0.844 |
+| Level effect (logit coefficient per +1 average level, level-only model) | 0.844 |
 | Average deck level, winners vs losers | 13.47 vs 13.25 |
 | Rank correlation of card effects with vs without level control (171 cards) | 0.943 |
 | Rank correlation of raw win rate vs level-adjusted effect | 0.749 |
 | Distinct decks / decks with at least 300 games | 6,389,317 / 2,277 |
 
-Takeaway: card level carries as much predictive signal as card choice, so rankings based on raw win rate are noticeably distorted. Adjusting for level changes which cards look strong.
+Reading these results: level carries slightly more predictive signal than card choice alone (AUC 0.665 vs 0.650), and the two together reach 0.711. Controlling for level changes the card ranking only modestly (Spearman 0.943). The lower 0.749 against raw win rates also reflects opponent mix and regularisation, so it should not be read as level bias alone.
+
+## Limitations and open issues
+- **The deck-level results are not credible yet.** The decks ranked as "robust" show win rates of 85-92% over hundreds of games and hundreds of distinct players, and several of the most-played decks show 10-21%. Matchmaking keeps win rates near 50%, so this points to how the dataset was collected (for example non-human opponents or a biased sample of matches) rather than to deck strength. The deck ranking must not be read as strategy advice until this is investigated.
+- **The level coefficient comes from a level-only model**, so it also absorbs card effects. The combined model's coefficient would be cleaner.
+- **Wilson intervals assume independent games**, but the same players repeat decks, player skill is unobserved, and 2,277 decks are ranked at once (multiple comparisons). Results are associations, not causal effects.
 
 ## Reproduce
 Open the notebook in Colab (badge above). The dataset is downloaded automatically with `kagglehub`.
